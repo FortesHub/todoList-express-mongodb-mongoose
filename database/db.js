@@ -1,7 +1,13 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const USERNAME = process.env.DB_USERNAME;
+const PASSWORD = process.env.DB_PASSWORD;
 
 function Connection(){
-const MONGODB_URI ='mongodb+srv://beatrizcmpf:react-todo@react-todo.f0s3cjv.mongodb.net/?retryWrites=true&w=majority';
+const MONGODB_URI = `mongodb+srv://${USERNAME}:${PASSWORD}@react-todo.f0s3cjv.mongodb.net/?retryWrites=true&w=majority`;
 
     mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
